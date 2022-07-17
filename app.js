@@ -14,7 +14,7 @@ app.use("/api/v1/tasks", taskRoute);
 const start = async()=>{
     try{
         await connectDB(process.env.MONGO_URL);
-            app.listen(PORT, console.log("Server Start! at PORT:5000"));
+            app.listen(process.env.PORT || PORT, console.log("Server Start! at PORT:5000"));
     } catch(err) {
         console.log(err);
     }
